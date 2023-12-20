@@ -13,18 +13,20 @@
 <body>
 
     <div class="container">
-        <button class="btn btn-success" id="toggle-btn" onclick="toggleCharacters()">Karakterleri
+        <button class="btn btn-success btn-lg" id="toggle-btn" onclick="toggleCharacters()">Karakterleri
             Göster</button>
     </div>
 
 
-    <form id="filter_form" class="d">
-        <div class="m-3 container mt-5 bg-white w-100 justify-content-center align-items-center hide" id="filter_group"></div>
-        <button class="btn btn-primary" type="submit">Filtrele</button>
+    <form  id="filter_form" class=" justify-content-between container  m-5 mt-5 hide" >
+        <div class="bg-white w-100  justify-content-around align-items-center" id="filter_group">
+            <button class="btn btn-success" type="submit">Filtrele</button>
+        </div>
+
     </form>
 
-   <div class="container-fluid d-flex justify-content-center  mt-5"> 
-    <div id="row" class="row g-3 justify-content-between hide"></div>
+   <div class="container-fluid d-flex justify-content-center mt-5 "> 
+    <div id="row" class="row g-3 justify-content-between"></div>
    </div> 
 
     <script src="script.js"></script>

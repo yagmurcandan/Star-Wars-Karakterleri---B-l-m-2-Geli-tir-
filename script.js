@@ -128,7 +128,7 @@ function toggleCharacters() {
     toggle_btn.classList.remove("btn-success");
     toggle_btn.classList.add("btn-danger");
     toggle_btn.innerText = "Karakterleri Gizle";
-    filter_form.classList.add("d-inline");
+    filter_form.classList.remove("hide");
 
     var i;
     for (i = 0; i < characters.length; i++) {
@@ -151,7 +151,7 @@ class="card-img-top"
     toggle_btn.classList.remove("btn-danger");
     row.innerHTML = "";
     toggle_btn.innerText = "Karakterleri Göster";
-    filter_form.classList.add("d-none");
+    filter_form.classList.add("hide");
   }
 }
 
