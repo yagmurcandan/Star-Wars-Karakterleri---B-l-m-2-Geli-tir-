@@ -1,11 +1,12 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url(Star-Wars-Logo-4K-Ultra-HD-Mobile-Wallpaper-1152x2048.jpg);
+    background-image: url(darth-vader-3840x2160-8219.jpg);
     background-position:center;
     background-size: cover;
     height: 100vh;
     overflow-x: hidden;
+
 }
 .container {
     text-align: center;
@@ -29,17 +30,21 @@ padding: 15px; */
 
 .card {
     text-align: center;
-    border: 5px solid gray;
+    border: 2px solid gray;
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
          height: 100%;
     margin: 0;
+    background: none;
+    color: white;
+
   }
 
   .img{
    display: flex;
    align-items: center;
    justify-content: center;
+   background-color: transparent;
    
   }
 
