@@ -98,7 +98,7 @@ const characters = [
   {
     id: 18,
     name: "Wedge Antilles",
-    pic: "https://lumiere-a.akamaihd.net/v1/images/databank_wedgeantilles_01_169_b8185dce.jpeg?region=0%2C0%2C1560%2C878",
+    pic: "https://upload.wikimedia.org/wikipedia/en/4/41/Wedge_Antilles-Denis_Lawson-Star_Wars_%281977%29.jpg",
     homeworld: "corellia",
   },
   {
@@ -133,14 +133,14 @@ function toggleCharacters() {
     var i;
     for (i = 0; i < characters.length; i++) {
       let element = document.createElement("div");
-      element.classList.add("col-4");
-      element.innerHTML = `<div class="card" style="width: 18rem;">
-<img src="${characters[i].pic}"
+      element.classList.add("col-3");
+      element.innerHTML = `<div class="card" style="width: 14rem;">
+<img class="card-img" src="${characters[i].pic}"
 class="card-img-top"
   alt="...">
 <div class="card-body">
-  <h5 class="card-title">${characters[i].name}</h5>
-  <p class="card-text">${characters[i].homeworld}</p>
+  <h5 class="card-title"> ${characters[i].name}</h5>
+  <p class="card-text">Homeworld: ${characters[i].homeworld}</p>
 </div>
 </div>`;
 
@@ -229,7 +229,7 @@ function FilteredCharacters(filteredHomeworld) {
   class="card-img-top"
     alt="...">
   <div class="card-body">
-    <h5 class="card-title">${characters[i].name}</h5>
+    <h4 class="card-title">${characters[i].name}</h4>
     <p class="card-text">${characters[i].homeworld}</p>
   </div>
   </div>`;

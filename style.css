@@ -2,8 +2,9 @@ body{
     margin: 0;
     padding: 0;
     background-image: url(darth-vader-3840x2160-8219.jpg);
-    background-position:center;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100vh;
     overflow-x: hidden;
 
@@ -13,6 +14,7 @@ body{
   }
 
 #toggle-btn{
+  cursor: pointer;
     /* position: absolute;
     top: 50%;
     left: 50%;
@@ -29,23 +31,25 @@ padding: 15px; */
 }
 
 .card {
+  display: block;
+  align-items: center;
+  justify-content: center;
     text-align: center;
     border: 2px solid gray;
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-         height: 100%;
-    margin: 0;
     background: none;
     color: white;
+    margin-bottom: 10px;
 
   }
 
-  .img{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: transparent;
-   
+  h5,p{
+    text-transform:capitalize;
+    /* overflow-wrap: break-word; */
+    text-align: center;
+  }
+
+  .card-img{
+    height: 300px;
   }
 
   .hide{
