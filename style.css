@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -10,24 +16,20 @@ body{
 
 }
 .container {
-    text-align: center;
+ justify-content: center;
+ align-items: center;
+ 
+    
   }
+
+  .header-container{
+    text-align: center;
+    margin-top: 200px;
+
+}
 
 #toggle-btn{
   cursor: pointer;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    /* padding: 12px 20px;
- */
-
- /* display: flex;
- align-items: center;
- justify-content: center;
- margin-top: 300px;
- margin-left: 300px;
-padding: 15px; */
 }
 
 .card {
@@ -44,8 +46,17 @@ padding: 15px; */
 
   h5,p{
     text-transform:capitalize;
-    /* overflow-wrap: break-word; */
     text-align: center;
+  }
+
+  .header{
+    color: white;
+    background-image: url(https://miro.medium.com/v2/resize:fit:1388/format:webp/1*0xEPiEGbcKrxmjt3ONcXZA.jpeg);
+
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+  
   }
 
   .card-img{
@@ -59,6 +70,10 @@ padding: 15px; */
   #filter_group{
     display: flex;
     flex-direction: row;
+    justify-content:space-around;
+    border-radius: 50px;
+    color: white;
+    width: 100%;
   }
 
  

@@ -12,21 +12,19 @@
 
 <body>
 
-    <div class="container">
-        <button class="btn btn-success btn-lg" id="toggle-btn" onclick="toggleCharacters()">Karakterleri
-            Göster</button>
+    <div class="header-container">
+        <h1 class="header" >Star Wars Characters</h1>
+        <button class="btn btn-success btn-lg" id="toggle-btn" onclick="toggleCharacters()">Show to Characters</button>
     </div>
 
 
-    <form  id="filter_form" class=" justify-content-between   m-5 mt-5 hide" >
-        <div class="bg-white w-100  justify-content-around align-items-center" id="filter_group">
-            <button class="btn btn-success" type="submit">Filtrele</button>
+    <div  id="filter_form" class="m-5 mt-5 hide">
+        <div class="bg-dark" id="filter_group">
         </div>
-
-    </form>
+    </div>
 
    <div class="container d-flex justify-content-center mt-5"> 
-    <div id="row" class="row g-3 justify-content-between"></div>
+    <div id="row" class="row  justify-content-between"></div>
    </div> 
 
     <script src="script.js"></script>

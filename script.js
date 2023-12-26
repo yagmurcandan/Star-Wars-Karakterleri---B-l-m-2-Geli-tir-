@@ -127,20 +127,21 @@ function toggleCharacters() {
   if (row.innerHTML === "") {
     toggle_btn.classList.remove("btn-success");
     toggle_btn.classList.add("btn-danger");
-    toggle_btn.innerText = "Karakterleri Gizle";
+    toggle_btn.innerText = "Hide to Characters";
     filter_form.classList.remove("hide");
 
     var i;
     for (i = 0; i < characters.length; i++) {
       let element = document.createElement("div");
       element.classList.add("col-3");
-      element.innerHTML = `<div class="card" style="width: 14rem;">
-<img class="card-img" src="${characters[i].pic}"
+      const card = characters[i];
+      element.innerHTML = `<div class="card"  filter-id="${card?.homeworld}" style="width: 14rem;">
+<img class="card-img" src="${card?.pic}"
 class="card-img-top"
   alt="...">
 <div class="card-body">
-  <h5 class="card-title"> ${characters[i].name}</h5>
-  <p class="card-text">Homeworld: ${characters[i].homeworld}</p>
+  <h5 class="card-title"> ${card?.name}</h5>
+  <p class="card-text">Homeworld: ${card?.homeworld}</p>
 </div>
 </div>`;
 
@@ -150,7 +151,7 @@ class="card-img-top"
     toggle_btn.classList.add("btn-success");
     toggle_btn.classList.remove("btn-danger");
     row.innerHTML = "";
-    toggle_btn.innerText = "Karakterleri Göster";
+    toggle_btn.innerText = "Show to Characters";
     filter_form.classList.add("hide");
   }
 }
@@ -160,81 +161,125 @@ const homeworldsRaw = [];
 for (var i = 0; i < characters.length; i++) {
   homeworldsRaw.push(characters[i].homeworld ?? "other");
 }
-// console.log(homeworldsRaw);
 
 const homeworldsUnique = [...new Set(homeworldsRaw)];
-// console.log(homeworldsUnique);
 
 const homeworldsLowercase = homeworldsUnique.map(function (e) {
   return e.toLowerCase();
 });
-// console.log(homeworldsLowercase);
 
 const homeworlds = homeworldsLowercase;
-// console.log(homeworlds);
+console.log(homeworldsLowercase);
 
 var i;
 for (i = 0; i < homeworlds.length; i++) {
   let element = document.createElement("div");
   element.classList.add("form-check");
   element.innerHTML = `
-<input class="form-check-input" type="radio" name="homeworld"  onclick="handleClick(this)"; id="homeworld-${homeworlds[i]}" value="${homeworlds[i]}" checked>
+<input class="form-check-input" type="radio" name="homeworld" id="homeworld-${homeworlds[i]}" value="${homeworlds[i]}">
 <label class="form-check-label"   for="homeworld-${homeworlds[i]}">
 ${homeworlds[i]}
 </label>
 `;
-
   filter_group.appendChild(element);
-}
-// console.log(homeworlds);
-
-let filteredHomeworld = 0;
-function handleClick(homeworld) {
-  filteredHomeworld = homeworld.value;
-  // console.log(filteredHomeworld);
 }
 
 const filter_form = document.getElementById("filter_form");
 
-filter_form.addEventListener("submit", (e) => {
-  e.preventDefault();
+//Filter
+document.addEventListener("DOMContentLoaded", function () {
   let filteredHomeworld = "";
-  const data = new FormData(filter_form);
+  function FilteredCharacters() {
+    const radioButtons = document.querySelectorAll('input[name="homeworld"]');
 
-  for (const entry of data) {
-    filteredHomeworld = entry[1];
+    for (const radioButton of radioButtons) {
+      if (radioButton.checked) {
+        filteredHomeworld = radioButton.value;
+        var cards = document.getElementsByClassName("card");
+        cards = Array.from(cards);
+        cards.forEach(function (item, index) {
+          if (row.innerHTML === "") {
+            toggle_btn.classList.remove("btn-success");
+            toggle_btn.classList.add("btn-danger");
+            toggle_btn.innerText = "Hide to Characters";
+          }
+          row.innerHTML = "";
+
+          var i;
+          for (i = 0; i < characters.length; i++) {
+            if (
+              (characters[i].homeworld ?? "other").toLowerCase() ===
+                filteredHomeworld ||
+              !filteredHomeworld
+            ) {
+              let element = document.createElement("div");
+              element.classList.add("col-3");
+              element.innerHTML = `<div class="card" style="width: 14rem;">
+          <img class="card-img" src="${characters[i].pic}"
+          class="card-img-top"
+            alt="...">
+          <div class="card-body">
+            <h4 class="card-title">${characters[i].name}</h4>
+            <p class="card-text">Homeworld: ${characters[i].homeworld}</p>
+          </div>
+          </div>`;
+
+              row.appendChild(element);
+            }
+          }
+          if (item.getAttribute("filter-id") != filteredHomeworld) {
+            item.style.display = "none";
+          } else {
+            item.style.display = "block";
+          }
+        });
+        break;
+      }
+    }
+    console.log("Selected homeworld", filteredHomeworld);
   }
-  FilteredCharacters(filteredHomeworld);
+
+  document.body.addEventListener("change", FilteredCharacters);
+
+  FilteredCharacters();
+
+  // const data = new FormData(filter_form);
+
+  // for (const entry of data) {
+  //   filteredHomeworld = entry[1];
+  // }
+  // FilteredCharacters(filteredHomeworld);
+  // console.log(filteredHomeworld);
 });
 
-function FilteredCharacters(filteredHomeworld) {
-  if (row.innerHTML === "") {
-    toggle_btn.classList.remove("btn-success");
-    toggle_btn.classList.add("btn-danger");
-    toggle_btn.innerText = "Karakterleri Gizle";
-  }
-  row.innerHTML = "";
+// function UpdateCharacters(filteredHomeworld) {
+//   if (row.innerHTML === "") {
+//     toggle_btn.classList.remove("btn-success");
+//     toggle_btn.classList.add("btn-danger");
+//     toggle_btn.innerText = "Hide to Characters";
+//   }
+//   row.innerHTML = "";
 
-  var i;
-  for (i = 0; i < characters.length; i++) {
-    if (
-      (characters[i].homeworld ?? "other").toLowerCase() ===
-        filteredHomeworld ||
-      !filteredHomeworld
-    ) {
-      let element = document.createElement("div");
-      element.classList.add("col-4");
-      element.innerHTML = `<div class="card" style="width: 18rem;">
-  <img src="${characters[i].pic}"
-  class="card-img-top"
-    alt="...">
-  <div class="card-body">
-    <h4 class="card-title">${characters[i].name}</h4>
-    <p class="card-text">${characters[i].homeworld}</p>
-  </div>
-  </div>`;
+//   var i;
+//   for (i = 0; i < characters.length; i++) {
+//     if (
+//       (characters[i].homeworld ?? "other").toLowerCase() ===
+//         filteredHomeworld ||
+//       !filteredHomeworld
+//     ) {
+//       let element = document.createElement("div");
+//       element.classList.add("col-3");
+//       element.innerHTML = `<div class="card" style="width: 14rem;">
+//   <img class="card-img" src="${characters[i].pic}"
+//   class="card-img-top"
+//     alt="...">
+//   <div class="card-body">
+//     <h4 class="card-title">${characters[i].name}</h4>
+//     <p class="card-text">Homeworld: ${characters[i].homeworld}</p>
+//   </div>
+//   </div>`;
 
-      row.appendChild(element);
-    }
-  }
-}
+//       row.appendChild(element);
+//     }
+//   }
+// }
