@@ -127,7 +127,7 @@ function toggleCharacters() {
   if (row.innerHTML === "") {
     toggle_btn.classList.remove("btn-success");
     toggle_btn.classList.add("btn-danger");
-    toggle_btn.innerText = "Hide to Characters";
+    toggle_btn.innerText = "Hide Characters";
     filter_form.classList.remove("hide");
 
     var i;
@@ -151,7 +151,7 @@ class="card-img-top"
     toggle_btn.classList.add("btn-success");
     toggle_btn.classList.remove("btn-danger");
     row.innerHTML = "";
-    toggle_btn.innerText = "Show to Characters";
+    toggle_btn.innerText = "Display Characters";
     filter_form.classList.add("hide");
   }
 }
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (row.innerHTML === "") {
             toggle_btn.classList.remove("btn-success");
             toggle_btn.classList.add("btn-danger");
-            toggle_btn.innerText = "Hide to Characters";
+            toggle_btn.innerText = "Hide Characters";
           }
           row.innerHTML = "";
 
