@@ -125,7 +125,7 @@ const row = document.getElementById("row");
 
 function toggleCharacters() {
   if (row.innerHTML === "") {
-    toggle_btn.classList.remove("btn-success");
+    toggle_btn.classList.remove("btn-primary");
     toggle_btn.classList.add("btn-danger");
     toggle_btn.innerText = "Hide Characters";
     filter_form.classList.remove("hide");
@@ -146,7 +146,7 @@ function toggleCharacters() {
       row.appendChild(element);
     }
   } else {
-    toggle_btn.classList.add("btn-success");
+    toggle_btn.classList.add("btn-primary");
     toggle_btn.classList.remove("btn-danger");
     row.innerHTML = "";
     toggle_btn.innerText = "Display Characters";
@@ -238,44 +238,4 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.addEventListener("change", FilteredCharacters);
 
   FilteredCharacters();
-
-  // const data = new FormData(filter_form);
-
-  // for (const entry of data) {
-  //   filteredHomeworld = entry[1];
-  // }
-  // FilteredCharacters(filteredHomeworld);
-  // console.log(filteredHomeworld);
 });
-
-// function UpdateCharacters(filteredHomeworld) {
-//   if (row.innerHTML === "") {
-//     toggle_btn.classList.remove("btn-success");
-//     toggle_btn.classList.add("btn-danger");
-//     toggle_btn.innerText = "Hide to Characters";
-//   }
-//   row.innerHTML = "";
-
-//   var i;
-//   for (i = 0; i < characters.length; i++) {
-//     if (
-//       (characters[i].homeworld ?? "other").toLowerCase() ===
-//         filteredHomeworld ||
-//       !filteredHomeworld
-//     ) {
-//       let element = document.createElement("div");
-//       element.classList.add("col-3");
-//       element.innerHTML = `<div class="card" style="width: 14rem;">
-//   <img class="card-img" src="${characters[i].pic}"
-//   class="card-img-top"
-//     alt="...">
-//   <div class="card-body">
-//     <h4 class="card-title">${characters[i].name}</h4>
-//     <p class="card-text">Homeworld: ${characters[i].homeworld}</p>
-//   </div>
-//   </div>`;
-
-//       row.appendChild(element);
-//     }
-//   }
-// }

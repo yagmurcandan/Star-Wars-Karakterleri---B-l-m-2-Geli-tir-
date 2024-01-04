@@ -2,141 +2,114 @@
   box-sizing: border-box;
 }
 
-body{
-    background-image: url(darth-vader-3840x2160-8219.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100vh;
-    overflow-x: hidden;
-    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+body {
+  background-image: url(darth-vader-3840x2160-8219.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
 }
 
- .container,.header-container {
-text-align: center;
-} 
-  
+.container,
+.header-container {
+  text-align: center;
+}
 
-#toggle-btn{
+#toggle-btn {
   cursor: pointer;
+  outline: none;
+  border: none;
+  transition: 0.4s;
+  padding: 8px;
 }
 
-#row{
- max-width: 100%;
+#row {
+  max-width: 100%;
 }
 
-.col-3{
- width:auto;
+.col-3 {
+  width: auto;
 }
 
- .card {
+.card {
   display: flex;
- justify-content: center;
- align-items: center;
-    border: 2px solid gray;
-    background: none;
-    color: white;
-    margin: 10px;
-    padding: 0;
-   
-  } 
+  justify-content: center;
+  align-items: center;
+  border: 2px solid gray;
+  background: none;
+  color: white;
+  margin: 10px;
+  padding: 0;
+}
 
-  h5,p{
-    text-transform:capitalize;
-    text-align: center;  
-  }
+h1,
+h5,
+p {
+  text-transform: capitalize;
+  text-align: center;
+}
 
-  .header{
+.header {
   color: rgb(153, 194, 222);
   font-weight: bold;
   font-size: 4vw;
-  font-family:'Courier New', Courier, monospace ;
-text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
   border-radius: 40%;
-    background-image: url(https://e0.pxfuel.com/wallpapers/374/30/desktop-wallpaper-night-sky-stars-background-psdgraphics-for-your-mobile-tablet-explore-star-star-wars-stars-awesome-star-wars.jpg);
- background-size:cover;
-background-position: center ;
-background-repeat: no-repeat;
-/* background-attachment: fixed; */
-margin-top: 0;
-  }
+  background-image: url(https://e0.pxfuel.com/wallpapers/374/30/desktop-wallpaper-night-sky-stars-background-psdgraphics-for-your-mobile-tablet-explore-star-star-wars-stars-awesome-star-wars.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 
-  .card-img{
-   height: 300px;
-  }
+.card-img {
+  height: 300px;
+}
 
-  .hide{
-    display:  none;
-  }
+.hide {
+  display: none;
+}
 
-  #filter_group{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    border-radius: 50px;
-    color: white;
-    max-width: 100%;
-
-  }
-
-/* 
-   @media screen and (max-width: 1000px) {
-  
-    .card {
-      width: 100%;
-      display: block;
-  align-items: center;
-    }
-
-    .row{
-      
-      display: grid;
-      grid-template-columns: auto;
-    }
-
-    .header-container,.header{
-      width: 100%;
-      display: block;
-      justify-content: center;
-      align-items: center;
-      max-width: 100%;
-    }
-
-    #filter_form, #filter_group{
-   width: 100%;
-display: flex;
-align-items: center;
-justify-content: space-between;
-    }
-  }  */
-/*   
-   @media only screen and (max-width: 600px) {
-    .card {
-      width: 100%;
-      display: grid;
-      grid-template-columns:max-content ;
-
-      display: flex;
-  align-items: center;
+#filter_group {
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  border-radius: 50px;
+  color: white;
+  width: 100%;
+  padding: 4px;
+}
 
-    }
-    .row{
-      display: block;
-      justify-content: space-around;
-    }
- 
-   .header-container,.header{
-      display: block;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #filter_form, #filter_group{
+@media screen and (max-width: 768px) {
+  .col-3 {
     width: 100%;
-display: flex;
-align-items: center;
-justify-content: space-between;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-     */
+
+  .header-container,
+  .header {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #filter_group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+  }
+}
