@@ -136,9 +136,7 @@ function toggleCharacters() {
       element.classList.add("col-3");
       const card = characters[i];
       element.innerHTML = `<div class="card"  filter-id="${card?.homeworld}" style="width: 14rem;">
-<img class="card-img" src="${card?.pic}"
-class="card-img-top"
-  alt="...">
+<img class="card-img" src="${card?.pic}" alt="...">
 <div class="card-body">
   <h5 class="card-title"> ${card?.name}</h5>
   <p class="card-text">Homeworld: ${card?.homeworld}</p>
@@ -215,9 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
               let element = document.createElement("div");
               element.classList.add("col-3");
               element.innerHTML = `<div class="card" style="width: 14rem;">
-          <img class="card-img" src="${characters[i].pic}"
-          class="card-img-top"
-            alt="...">
+          <img class="card-img" src="${characters[i].pic}" alt="...">
           <div class="card-body">
             <h4 class="card-title">${characters[i].name}</h4>
             <p class="card-text">Homeworld: ${characters[i].homeworld}</p>
