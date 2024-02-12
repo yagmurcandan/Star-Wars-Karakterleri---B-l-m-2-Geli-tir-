@@ -3,19 +3,19 @@
 }
 
 body {
-  background-image: url(darth-vader-3840x2160-8219.jpg);
+  background-image: url(img/darth-vader-3840x2160-8219.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100vh;
+  max-height: 100vh;
   overflow-x: hidden;
   font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
     sans-serif;
 }
 
 .container,
-.header-container {
+.header {
   text-align: center;
 }
 
@@ -53,10 +53,10 @@ p {
   text-align: center;
 }
 
-.header {
+.header h1 {
   color: rgb(153, 194, 222);
   font-weight: bold;
-  font-size: 4vw;
+
   font-family: "Courier New", Courier, monospace;
   text-transform: uppercase;
   border-radius: 40%;
@@ -88,7 +88,7 @@ p {
   padding: 4px;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .col-3 {
     width: 100%;
     display: flex;
